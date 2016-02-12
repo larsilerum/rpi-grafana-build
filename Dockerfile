@@ -15,4 +15,6 @@ RUN apt-get install -y rpm
 
 # Other installations
 RUN apt-get install -y bzip2
-
+RUN go get github.com/grafana/grafana
+WORKDIR "/gopath/src/github.com/grafana/grafana"
+RUN go run build.go setup
